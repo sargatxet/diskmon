@@ -45,7 +45,9 @@ equipos, **P2** siguiente iteración, **P3** mejoras opcionales.
 - [ ] Internacionalización de la CLI/dashboard (español/inglés) y fallback ASCII
       para terminales sin UTF-8.
 - [ ] Empaquetado `.deb` y publicación en un repositorio APT propio.
-- [ ] Automatizar releases (tag, wheel, checksum, notas desde `CHANGELOG.md`).
+- [ ] Automatizar releases desde CI: wheel/sdist adjuntos, `SHA256SUMS` y notas
+      generadas desde `CHANGELOG.md` (el tag y el archivo fuente ya se publican
+      a mano en cada release).
 - [ ] Añadir capturas y ejemplo real al README.
 - [ ] Revisar periódicamente los umbrales SMART por familia de discos.
 - [ ] Evaluar autenticación básica opcional para el dashboard si se expone más
@@ -62,3 +64,5 @@ equipos, **P2** siguiente iteración, **P3** mejoras opcionales.
 - [x] Configuración TOML y umbrales.
 - [x] Unidades systemd de usuario.
 - [x] 63 tests, fixtures SMART reales y licencia MIT.
+- [x] Tag `v1.0.0` y release en GitHub con archivo fuente descargable, para
+      instalar sin clonar el repositorio.

@@ -187,7 +187,9 @@ Checklist de release:
 4. `./bin/diskmon scan --no-save` y `./bin/diskmon serve` comprobados.
 5. `CHANGELOG.md` con fecha y versión.
 6. `pyproject.toml` y `diskmon/__init__.py` con la misma versión.
-7. Commit de release y, si aplica, tag `vX.Y.Z`.
+7. Commit de release y tag anotado `vX.Y.Z`.
+8. Publicar la release en GitHub sobre ese tag: GitHub genera el `.tar.gz` y el
+   `.zip` del código fuente, que es el artefacto de descarga sin clonar.
 
 ## 11. Git
 

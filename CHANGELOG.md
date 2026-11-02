@@ -57,6 +57,9 @@ nativo basado en SMART.
   Linux Mint 22.x / Ubuntu 24.x.
 - Suite de 63 tests con fixtures SMART reales y casos sintéticos de fallo.
 - Licencia MIT completa.
+- Release `v1.0.0` en GitHub con archivo fuente descargable (`.tar.gz`/`.zip`):
+  permite usar DiskMon sin clonar el repositorio; el proceso está documentado
+  en el README.
 
 ### Security
 

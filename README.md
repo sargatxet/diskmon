@@ -69,6 +69,29 @@ Alternativa empaquetada:
 pipx install .        # o: python3 -m pip install --user .
 ```
 
+### Descargar sin clonar el repositorio
+
+Cada versión se publica como *release* de GitHub con el archivo fuente
+comprimido que genera el propio GitHub, así que no necesitas `git` ni clonar
+nada:
+
+```bash
+# Desde la página de releases, o directamente (ajusta la versión):
+curl -LO https://github.com/sargatxet/diskmon/archive/refs/tags/v1.0.0.tar.gz
+tar xzf v1.0.0.tar.gz
+cd diskmon-1.0.0
+
+./bin/diskmon doctor          # valida el entorno
+./bin/diskmon scan            # análisis real
+make install                  # opcional: enlace en ~/.local/bin/diskmon
+```
+
+La misma release ofrece el archivo en `.zip`. El contenido es el árbol de
+fuentes completo: lanzador `bin/diskmon`, unidades `systemd/`,
+`config.example.toml`, tests y documentación. No incluye binarios ni
+dependencias de Python instaladas, así que siguen aplicando los requisitos de
+arriba; el código descargado corresponde exactamente al tag `v1.0.0`.
+
 ## Permisos para leer SMART
 
 SMART necesita acceso a los dispositivos de bloque. Opciones:
