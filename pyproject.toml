@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diskmon"
+version = "1.0.0"
+description = "Monitor de salud de discos basado en SMART para Linux"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "DiskMon" }]
+keywords = ["smart", "disk", "health", "monitoring", "linux"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Hardware",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "tomli>=2.0; python_version < '3.11'",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyflakes>=3.0"]
+
+[project.scripts]
+diskmon = "diskmon.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["diskmon*"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "tests"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,128 @@
+{
+  "blockdevices": [
+    {
+      "name": "sda",
+      "path": "/dev/sda",
+      "type": "disk",
+      "size": 1000000000000,
+      "rota": false,
+      "tran": "sata",
+      "model": "TEST SSD 1TB",
+      "serial": "TEST-SSD-0001",
+      "fstype": null,
+      "mountpoints": [
+        null
+      ],
+      "pttype": "gpt",
+      "children": [
+        {
+          "name": "sda1",
+          "path": "/dev/sda1",
+          "type": "part",
+          "size": 536870912,
+          "rota": false,
+          "tran": null,
+          "model": null,
+          "serial": null,
+          "fstype": "vfat",
+          "mountpoints": [
+            "/boot/efi"
+          ],
+          "pttype": "gpt"
+        },
+        {
+          "name": "sda2",
+          "path": "/dev/sda2",
+          "type": "part",
+          "size": 999500000000,
+          "rota": false,
+          "tran": null,
+          "model": null,
+          "serial": null,
+          "fstype": "ext4",
+          "mountpoints": [
+            "/"
+          ],
+          "pttype": "gpt"
+        }
+      ]
+    },
+    {
+      "name": "sdb",
+      "path": "/dev/sdb",
+      "type": "disk",
+      "size": 500000000000,
+      "rota": true,
+      "tran": "sata",
+      "model": "TEST HDD 500GB",
+      "serial": "TEST-HDD-0001",
+      "fstype": null,
+      "mountpoints": [
+        null
+      ],
+      "pttype": "gpt",
+      "children": [
+        {
+          "name": "sdb1",
+          "path": "/dev/sdb1",
+          "type": "part",
+          "size": 500000000000,
+          "rota": true,
+          "tran": null,
+          "model": null,
+          "serial": null,
+          "fstype": "ext4",
+          "mountpoints": [
+            "/mnt/data"
+          ],
+          "pttype": "gpt"
+        }
+      ]
+    },
+    {
+      "name": "sdc",
+      "path": "/dev/sdc",
+      "type": "disk",
+      "size": 0,
+      "rota": true,
+      "tran": "usb",
+      "model": "TEST Card Reader 1",
+      "serial": "TEST-CARD-0001",
+      "fstype": null,
+      "mountpoints": [
+        null
+      ],
+      "pttype": null
+    },
+    {
+      "name": "sdd",
+      "path": "/dev/sdd",
+      "type": "disk",
+      "size": 0,
+      "rota": true,
+      "tran": "usb",
+      "model": "TEST Card Reader 2",
+      "serial": "TEST-CARD-0002",
+      "fstype": null,
+      "mountpoints": [
+        null
+      ],
+      "pttype": null
+    },
+    {
+      "name": "sr0",
+      "path": "/dev/sr0",
+      "type": "rom",
+      "size": 1073741824,
+      "rota": true,
+      "tran": "sata",
+      "model": "TEST DVD-RW",
+      "serial": "TEST-DVD-0001",
+      "fstype": null,
+      "mountpoints": [
+        null
+      ],
+      "pttype": null
+    }
+  ]
+}

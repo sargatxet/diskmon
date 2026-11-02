@@ -1,0 +1,11 @@
+[Unit]
+Description=DiskMon - análisis periódico de salud de discos
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=6h
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

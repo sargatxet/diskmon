@@ -1,0 +1,7 @@
+#!/bin/sh
+# Lanzador de diskmon sin necesidad de instalar el paquete.
+# Funciona también si este fichero se invoca mediante un enlace simbólico
+# (p. ej. ~/.local/bin/diskmon -> repositorio/bin/diskmon).
+SELF=$(readlink -f "$0" 2>/dev/null || echo "$0")
+DIR=$(CDPATH= cd -- "$(dirname -- "$SELF")/.." && pwd)
+PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m diskmon "$@"

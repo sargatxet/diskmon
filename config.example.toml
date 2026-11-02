@@ -1,0 +1,60 @@
+# Configuración de ejemplo para DiskMon.
+# Copiar a ~/.config/diskmon/config.toml y ajustar.
+
+db_path = "~/.local/share/diskmon/history.db"
+
+# auto   -> intenta sudo -n y, si no, acceso directo
+# always -> usa siempre sudo -n
+# never  -> nunca usa sudo (requiere ejecutar como root o tener permisos)
+use_sudo = "auto"
+
+# Incluir dispositivos de 0 bytes (lectores de tarjetas sin medio).
+include_empty = false
+
+# Discos a ignorar: nombre (sdz), ruta (/dev/sdz) o número de serie.
+exclude = []
+
+# Nivel que provoca código de salida != 0: none | warning | critical
+fail_on = "warning"
+
+# Guardar cada análisis en el histórico SQLite.
+save_history = true
+
+# Número de registros por defecto en "diskmon history".
+history_limit = 100
+
+# Dashboard web.
+web_host = "127.0.0.1"
+web_port = 8765
+web_cache_seconds = 30
+
+[thresholds]
+# Temperaturas en ºC
+temp_warn_hdd = 50
+temp_crit_hdd = 58
+temp_warn_ssd = 65
+temp_crit_ssd = 75
+temp_warn_nvme = 70
+temp_crit_nvme = 80
+
+# Horas de encendido
+hdd_hours_warn = 40000
+hdd_hours_crit = 60000
+ssd_hours_warn = 50000
+
+# Sectores
+realloc_warn = 1
+realloc_crit = 10
+pending_crit = 1
+offline_uncorrectable_crit = 1
+
+# Desgaste de SSD/NVMe (% de vida consumida)
+wear_warn = 80
+wear_crit = 95
+
+# Bloques de reserva disponibles (%)
+spare_warn = 20
+
+# Uso de sistemas de ficheros (%)
+fs_warn = 90
+fs_crit = 95

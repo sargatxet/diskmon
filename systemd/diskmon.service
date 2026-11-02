@@ -1,0 +1,10 @@
+[Unit]
+Description=DiskMon - análisis de salud de discos
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/diskmon scan --no-color --fail-on critical
+Nice=10
+IOSchedulingClass=idle
+# El histórico se guarda en ~/.local/share/diskmon/history.db

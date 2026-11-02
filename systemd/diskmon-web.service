@@ -1,0 +1,11 @@
+[Unit]
+Description=DiskMon - dashboard web local
+After=network.target
+
+[Service]
+ExecStart=%h/.local/bin/diskmon serve
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
